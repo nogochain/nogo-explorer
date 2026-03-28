@@ -1,0 +1,222 @@
+{
+  "nodeAddr": "localhost",
+  "port": 8545,
+  "wsPort": 8546,
+  "bulkSize": 100,
+  "syncAll": true,
+  "quiet": false,
+  "useRichList": true,
+  "startBlock": 0,
+  "endBlock": null,
+  "maxRetries": 3,
+  "retryDelay": 1000,
+  "logLevel": "info",
+  "enableNFT": true,
+  "enableContractVerification": true,
+  "enableTokenTracking": true,
+  "apiRateLimit": 100,
+  "webSocketEnabled": true,
+  "web3Provider": {
+    "url": "http://localhost:8545"
+  },
+  "currency": {
+    "name": "NogoChain",
+    "symbol": "NOGO",
+    "unit": "wei",
+    "decimals": 18,
+    "gasUnit": "Gwei",
+    "icon": "/img/nogo.svg",
+    "color": "from-blue-500 to-purple-600",
+    "priceApi": {
+      "coingecko": {
+        "enabled": false,
+        "id": ""
+      },
+      "coinpaprika": {
+        "enabled": false,
+        "id": ""
+      }
+    }
+  },
+  "performance": {
+    "memoryLimitMB": 512,
+    "nodeOptions": "--max-old-space-size=512"
+  },
+  "caching": {
+    "enabled": true,
+    "duration": 300
+  },
+  "miners": {
+    "0xA9c83E5f0520E7b14f8E6D93A6b65993884C0165": "NogoChain Treasury"
+  },
+  "features": {
+    "nft": {
+      "enabled": true,
+      "metadataProviders": ["ipfs", "http"],
+      "imageFallback": true,
+      "cacheEnabled": true
+    },
+    "contractVerification": {
+      "enabled": true,
+      "compilerVersions": ["0.8.30", "0.8.29", "0.8.28", "0.8.27", "0.8.26", "0.8.25", "0.8.24", "0.8.23", "0.8.22", "0.8.21", "0.8.20", "0.8.19", "0.8.18", "0.8.17", "0.8.16", "0.8.15", "0.8.14", "0.8.13", "0.8.12", "0.8.11", "0.8.10"],
+      "optimizationEnabled": true,
+      "maxSourceSize": 50000
+    },
+    "richlist": {
+      "enabled": true,
+      "updateInterval": 3600,
+      "minBalance": "1000000000000000000"
+    },
+    "statistics": {
+      "enabled": true,
+      "updateInterval": 300,
+      "blockRange": 100
+    }
+  },
+  "api": {
+    "rateLimit": {
+      "windowMs": 900000,
+      "max": 100
+    },
+    "cors": {
+      "origin": ["https://explorer.nogochain.org", "http://localhost:3000"],
+      "credentials": true
+    }
+  },
+  "database": {
+    "uri": "mongodb://explorer:your_secure_password@localhost:27017/explorerDB?authSource=explorerDB",
+    "options": {
+      "maxPoolSize": 50,
+      "serverSelectionTimeoutMS": 15000,
+      "socketTimeoutMS": 60000,
+      "connectTimeoutMS": 15000,
+      "bufferCommands": false,
+      "autoIndex": false,
+      "autoCreate": false
+    }
+  },
+  "logging": {
+    "level": "info",
+    "file": {
+      "enabled": true,
+      "maxSize": "10m",
+      "maxFiles": 5
+    },
+    "console": {
+      "enabled": true,
+      "colorize": true
+    }
+  },
+  "explorer": {
+    "name": "NogoChain Explorer",
+    "description": "Real-time blockchain explorer for NogoChain network",
+    "version": "1.0.0",
+    "url": "https://explorer.nogochain.org",
+    "apiUrl": "https://explorer.nogochain.org/api",
+    "copyright": "NogoChain Foundation",
+    "github": "https://github.com/nogochain/nogo-explorer"
+  },
+  "network": {
+    "chainId": 318,
+    "name": "NogoChain Mainnet",
+    "rpcUrl": "http://localhost:8545",
+    "wsUrl": "ws://localhost:8546",
+    "explorer": "https://explorer.nogochain.org",
+    "blockTime": 17
+  },
+  "dex": {
+    "enabled": false,
+    "factory": "0x0000000000000000000000000000000000000000",
+    "router": "0x0000000000000000000000000000000000000000",
+    "masterChef": "0x0000000000000000000000000000000000000000",
+    "wrappedNative": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "name": "Wrapped NOGO",
+      "symbol": "WNOGO",
+      "decimals": 18,
+      "icon": "/img/nogo.svg",
+      "color": "from-blue-400 to-purple-500"
+    },
+    "rewardToken": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "symbol": "REWARD",
+      "name": "Reward Token",
+      "decimals": 18,
+      "icon": "/img/reward.png",
+      "color": "from-yellow-400 to-amber-500"
+    },
+    "tokens": {
+      "usdt": {
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "Tether USD",
+        "symbol": "USDT",
+        "decimals": 6,
+        "icon": "/img/USDT.svg",
+        "color": "from-green-400 to-emerald-500"
+      },
+      "usdc": {
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "USD Coin",
+        "symbol": "USDC",
+        "decimals": 6,
+        "icon": "/img/USDC.svg",
+        "color": "from-blue-400 to-blue-500"
+      }
+    },
+    "lpTokens": {
+      "usdtWeth": {
+        "address": "0x0000000000000000000000000000000000000000",
+        "name": "USDT-WNOGO LP",
+        "symbol": "USDT-NOGO LP",
+        "token0": "USDT",
+        "token1": "WNOGO"
+      }
+    },
+    "farmPools": [
+      {
+        "pid": 0,
+        "name": "Example LP Pool",
+        "lpToken": "0x0000000000000000000000000000000000000000",
+        "token0Symbol": "USDT",
+        "token1Symbol": "NOGO"
+      }
+    ]
+  },
+  "launchpad": {
+    "enabled": true,
+    "useV2": true,
+    "factoryAddressV2": "0x0000000000000000000000000000000000000000",
+    "factoryAddress": "0x0000000000000000000000000000000000000000",
+    "creationFee": "10000000000000000000",
+    "note": "factoryAddressV2 = TokenFactory V2 (recommended), factoryAddress = TokenFactory V1 (legacy)"
+  },
+  "tokenLogos": {
+    "0x0000000000000000000000000000000000000001": "https://explorer.nogochain.org/img/token1.svg",
+    "0x0000000000000000000000000000000000000002": "https://explorer.nogochain.org/img/token2.png"
+  },
+  "blacklist": {
+    "tokens": [],
+    "lpPairs": []
+  },
+  "social": {
+    "x": "https://x.com/nogochain",
+    "discord": "https://discord.gg/nogochain",
+    "telegram": "https://t.me/nogochain",
+    "github": "https://github.com/nogochain"
+  },
+  "supply": {
+    "blockReward": 8,
+    "premineAmount": 10000000,
+    "excludedAddresses": [
+      {
+        "address": "0x0000000000000000000000000000000000000000",
+        "label": "Burn Address"
+      },
+      {
+        "address": "0xA9c83E5f0520E7b14f8E6D93A6b65993884C0165",
+        "label": "Treasury Contract"
+      }
+    ],
+    "cacheDuration": 60
+  }
+}
